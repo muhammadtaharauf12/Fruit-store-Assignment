@@ -1,0 +1,236 @@
+:root {
+    --primary: #27ae60;
+    --dark: #2d3436;
+    --light-bg: #f8f9fa;
+    --glass: rgba(255, 255, 255, 0.9);
+    --shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--light-bg); color: var(--dark); }
+
+/* Login Styling */
+.login-bg {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background: var(--glass);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.brand-header h1 { margin-bottom: 10px; font-size: 28px; }
+.brand-header p { color: #666; margin-bottom: 30px; }
+
+.input-field { text-align: left; margin-bottom: 20px; }
+.input-field label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px; }
+.input-field input { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; outline: none; }
+
+.btn-primary { 
+    width: 100%; padding: 14px; background: var(--primary); color: white; 
+    border: none; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.3s;
+}
+
+/* Home Navbar */
+.navbar { background: white; padding: 15px 20px; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; }
+/* Navbar content ko align karne ke liye */
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px; /* Elements ke darmiyan gap */
+}
+
+/* Cart Pill Styling */
+.cart-pill {
+    background: var(--dark); /* Black ya Dark Grey background */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; /* Text ko wrap hone se rokne ke liye */
+}
+
+.cart-pill:hover {
+    background: var(--primary); /* Hover par green ho jayega */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(39, 174, 96, 0.2);
+}
+
+.cart-icon {
+    font-size: 18px;
+}
+
+.cart-text {
+    font-size: 14px;
+}
+
+/* Responsive adjustment agar screen choti ho */
+@media (max-width: 768px) {
+    .search-wrapper { width: 50%; }
+    .cart-text { display: none; } /* Mobile par sirf icon dikhega */
+    .cart-pill { padding: 10px; }
+}
+.user-profile { display: flex; align-items: center; gap: 12px; }
+.avatar { font-size: 24px; background: #eee; padding: 8px; border-radius: 50%; }
+.user-info h4 { font-size: 16px; }
+.user-info p { font-size: 12px; color: var(--primary); font-weight: 600; }
+
+/* --- Naya Modern Search Bar Code --- */
+.search-wrapper {
+    position: relative;
+    width: 45%; 
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.search-wrapper input {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    background: #f1f3f4;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-wrapper input:focus {
+    background: white;
+    border-color: var(--primary);
+    box-shadow: 0 10px 20px rgba(39, 174, 96, 0.1);
+    outline: none;
+    width: 105%; /* Bar focus hone par thora sa phail jayega */
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #888;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Jab search bar par click ho (Focus), to icon green ho jaye */
+.search-wrapper input:focus + .search-icon {
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+/* Product Grid */
+.container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+.main-header { text-align: center; margin-bottom: 40px; }
+
+.fruit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
+
+/* Card ki basic look aur smooth transition */
+.fruit-card {
+    background: white; 
+    border-radius: 20px; 
+    padding: 20px; 
+    box-shadow: var(--shadow);
+    text-align: center; 
+    transition: all 0.4s ease; /* Isse color smooth badlega */
+    border: 1px solid #eee;
+    cursor: pointer;
+}
+
+/* Jab mouse card ke upar aaye */
+.fruit-card:hover {
+    transform: translateY(-10px); 
+    background-color: var(--primary); /* Card green ho jayega */
+    border-color: var(--primary);
+}
+
+/* Hover hone par text ko white karne ke liye */
+.fruit-card:hover h3, 
+.fruit-card:hover .price, 
+.fruit-card:hover .qty,
+.fruit-card:hover .category-tag {
+    color: white !important;
+}
+
+/* Category tag ka background bhi halka sa change hoga hover par */
+.fruit-card:hover .category-tag {
+    background: rgba(255, 255, 255, 0.2);
+}
+.fruit-card img { width: 100px; height: 100px; object-fit: contain; margin-bottom: 15px; }
+.category-tag { background: #e8f5e9; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+.fruit-card h3 { margin: 10px 0; }
+.price { font-weight: 800; color: #2d3436; font-size: 18px; }
+.qty { color: #888; font-size: 13px; margin-top: 5px; }
+
+
+
+
+
+/* Modal Overlay */
+.modal-overlay {
+    display: none; /* Default hidden */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Background dhundla karne ke liye */
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Box */
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px; top: 15px;
+    font-size: 28px; cursor: pointer;
+    color: #888;
+}
+
+/* Modal Buttons */
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-buy { background: var(--dark); color: white; flex: 1; padding: 12px; border-radius: 10px; border: none; font-weight: 700; cursor: pointer;}
+.btn-add { background: var(--primary); color: white; flex: 1; padding: 12px; border-radius: 10px; border: none; font-weight: 700; cursor: pointer;}
+
+
+
