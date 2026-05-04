@@ -82,7 +82,7 @@ const fruits = [
     price: "Rs. 400",
     category: "Tropical",
     qty: "1 Unit",
-    img: "https://www.melissas.com/cdn/shop/products/image-of-raspberries-fruit-14763647303724_600x600.jpg?v=1618238765",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmv7fuYCnQNdmVUK5QpFohjMV9x1aZ12dblQ&s",
   },
 ];
 
